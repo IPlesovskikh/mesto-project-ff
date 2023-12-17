@@ -11,7 +11,7 @@ export function openModal(modal) {
 export function closeModal(modal) {
   modal.classList.add('popup_is-animated');
   modal.classList.remove('popup_is-opened');
-  modal.removeEventListener('keydown', closeModalByButtonEscape);
+  document.removeEventListener('keydown', closeModalByButtonEscape);
 }
 
 // Функция закрытия модального окна по нажатию на клавишу "Esc"
