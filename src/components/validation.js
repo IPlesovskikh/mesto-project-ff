@@ -1,4 +1,4 @@
-// Функция отображения ошибки
+// Отображение ошибки
 
 function showInputError(formElement, inputElement, errorMessage, validationConfig) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -7,7 +7,7 @@ function showInputError(formElement, inputElement, errorMessage, validationConfi
   errorElement.classList.add(validationConfig.errorClass);
 };
 
-// Функция скрытия ошибки
+// Скрытие ошибки
 
 function hideInputError(formElement, inputElement, validationConfig) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -16,7 +16,7 @@ function hideInputError(formElement, inputElement, validationConfig) {
   errorElement.textContent = '';
 }; 
 
-// Функция проверки валидности инпута
+// Проверка валидности инпута
 
 function isValid(formElement, inputElement, validationConfig) {
   if (inputElement.validity.patternMismatch) {
@@ -32,7 +32,7 @@ function isValid(formElement, inputElement, validationConfig) {
   }
 }; 
 
-// Функция проверки валидности формы
+// Проверка валидности формы
 
 function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
@@ -40,19 +40,19 @@ function hasInvalidInput(inputList) {
   })
 }; 
 
-// Функция переключателя кнопки отправки формы
+// Изменение состояния кнопки отправки формы
 
 function toggleButtonState(inputList, buttonElement, validationConfig) {
   if (hasInvalidInput(inputList)) {
-        buttonElement.disabled = true;
+    buttonElement.disabled = true;
     buttonElement.classList.add(validationConfig.inactiveButtonClass);
   } else {
-        buttonElement.disabled = false;
+    buttonElement.disabled = false;
     buttonElement.classList.remove(validationConfig.inactiveButtonClass);
   }
 }; 
 
-// Функция добавления обрабочка на каждый инпут
+// Добавление обработчика на каждый инпут
 
 function setEventListeners(formElement, validationConfig) {
   const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
@@ -66,7 +66,7 @@ function setEventListeners(formElement, validationConfig) {
   });
 }; 
 
-// Функция сброса состояния ошибки
+// Сбросить состояние ошибки
 
 export function clearValidation(profileForm, validationConfig) {
   const inputList = Array.from(profileForm.querySelectorAll(validationConfig.inputSelector));
@@ -78,7 +78,7 @@ export function clearValidation(profileForm, validationConfig) {
   toggleButtonState(inputList, buttonElement, validationConfig);
 }
 
-// Функция добавления валидации
+// Добавление валидации
 
 export function enableValidation(validationConfig) {
   const formList = Array.from(document.querySelectorAll(validationConfig.formSelector));

@@ -1,4 +1,4 @@
-// Функция открытия модального окна
+// Открытие модального окна
 
 export function openModal(modal) {
   modal.classList.add('popup_is-animated');
@@ -6,7 +6,7 @@ export function openModal(modal) {
   document.addEventListener('keydown', closeModalByButtonEscape);
 }
 
-// Функции закрытия модального окна
+// Закрытие модального окна
 
 export function closeModal(modal) {
   modal.classList.add('popup_is-animated');
@@ -14,7 +14,7 @@ export function closeModal(modal) {
   document.removeEventListener('keydown', closeModalByButtonEscape);
 }
 
-// Функция закрытия модального окна по нажатию на клавишу "Esc"
+// Закрытие модального окна по нажатию на клавишу "Esc"
 
 export function closeModalByButtonEscape(evt) {
   if (evt.key === 'Escape') {
@@ -23,7 +23,7 @@ export function closeModalByButtonEscape(evt) {
   };
 } 
 
-// Функция закрытия модального окна по клику на оверлей
+// Закрытие модального окна по клику на оверлей
 
 export function closeModalByClickOverlay(evt) {
   if (evt.target.classList.contains('popup_is-opened')) {

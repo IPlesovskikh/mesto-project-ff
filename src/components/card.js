@@ -29,13 +29,13 @@ export function createCard(card, handleDeleteCard, handleLikeCard, handleOpenCar
   return instance;
 }
 
-// Функция удаления карточки
+// Удаление карточки
 
 export function deleteCard(element) {
   element.remove();
 }
 
-// Функция добавления/удаления отметки 'Нравится карточка'
+// Добавление/удаление отметки 'Нравится карточка'
   
 export function likeCard(likeButton) {
   likeButton.classList.toggle('card__like-button_is-active'); 
