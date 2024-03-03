@@ -68,13 +68,12 @@ function setEventListeners(formElement, validationConfig) {
 
 // Сбросить состояние ошибки
 
-export function clearValidation(profileForm, validationConfig) {
-  const inputList = Array.from(profileForm.querySelectorAll(validationConfig.inputSelector));
-  const buttonElement = profileForm.querySelector(validationConfig.submitButtonSelector);
+export function clearValidation(form, validationConfig) {
+  const inputList = Array.from(form.querySelectorAll(validationConfig.inputSelector));
+  const buttonElement = form.querySelector(validationConfig.submitButtonSelector);
   inputList.forEach((inputElement) => {
-    hideInputError(profileForm, inputElement, validationConfig)
+    hideInputError(form, inputElement, validationConfig)
   });
-  profileForm.reset();
   toggleButtonState(inputList, buttonElement, validationConfig);
 }
 
