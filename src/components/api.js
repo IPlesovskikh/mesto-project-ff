@@ -27,7 +27,7 @@ export const getInfoUser = () => {
 export const getCards = () => {
   return fetch(`${сonfig.url}/cards`, {
     method: 'GET',
-    headers: config.headers
+    headers: сonfig.headers
   })
   .then(res => checkApi(res))
 }
@@ -46,7 +46,7 @@ export const putInfoUser = (newName, newJob) => {
 }
 
 // Сохраняем новую карточку
-export const addCardByServer = (cardData) => {
+export const addCard = (cardData) => {
   return fetch(`${сonfig.url}/cards`, {
     method: 'POST',
     headers: сonfig.headers,
@@ -56,7 +56,7 @@ export const addCardByServer = (cardData) => {
 }
 
 // Удаляем карточку
-export const deleteCardByServer = (cardId) => {
+export const deleteCard = (cardId) => {
   return fetch(`${сonfig.url}/cards/${cardId}`, {
     method: 'DELETE',
     headers: сonfig.headers
@@ -65,7 +65,7 @@ export const deleteCardByServer = (cardId) => {
 }
 
 // Ставим лайк
-export const getLikeByServer = (cardId) => {
+export const setLike = (cardId) => {
   return fetch(`${сonfig.url}/cards/likes/${cardId}`, {
     method: 'PUT',
     headers: сonfig.headers
@@ -74,7 +74,7 @@ export const getLikeByServer = (cardId) => {
 }
 
 // Удаляем лайк
-export const deteleLikeByServer = (cardId) => {
+export const deleteLike = (cardId) => {
   return fetch(`${сonfig.url}/cards/likes/${cardId}`, {
     method: 'DELETE',
     headers: сonfig.headers
@@ -83,11 +83,11 @@ export const deteleLikeByServer = (cardId) => {
 }
 
 // Обновляем аватар
-export const getNewAvatar = (avatarData) => {
+export const getNewAvatar = (avatar) => {
   return fetch(`${сonfig.url}/users/me/avatar`, {
     method: 'PATCH',
     headers: сonfig.headers,
-    body: JSON.stringify(avatarData)
+    body: JSON.stringify(avatar)
   })
   .then(res => checkApi(res))
 }
